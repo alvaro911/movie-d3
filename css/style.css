@@ -17,14 +17,17 @@ menu{
   height: 6vh;
   display: flex;
   justify-content: center;
+  background-color: #162020;
 }
 
 .btns button{
   border: 0;
   background-color: #11f195;
   color: white;
-  width: 15%;
+  width: 12%;
   margin: 0 16px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
 .chart{

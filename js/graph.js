@@ -21,15 +21,22 @@ function renderD3(){
       .await(ready);
   }
 
+  const nextBtn = d3.select('.next')
+    .on('click', () => {
+      page++;
+      getMovies(page);
+    });
+
+  const prevBtn = d3.select('.prev')
+    .on('click', () => {
+      if(page > 1){
+        page--;
+        getMovies(page);
+      }
+    });
+
   function ready(err, data){
     if(err) throw err;
-
-    const popularity = data.results.map(movie => {
-      return movie.popularity;
-    })
-
-    const min = d3.min(popularity);
-    const max = d3.max(popularity);
 
     const children = data.results.map(movie => {
       return {
@@ -40,12 +47,22 @@ function renderD3(){
       };
     });
 
+    const popularity = children.map(movie => {
+      return movie.popularity;
+    });
+
+    const min = d3.min(popularity);
+    const max = d3.max(popularity);
+
     const tool_tip = d3.tip()
       .attr("class", "d3-tip")
       .offset([0, 0])
       .html(function(d) { return `
         <p>
           <b>${d.title}</b>
+          <br>
+          <br>
+          Popularity: ${d.popularity}
         </p>
         `  })
       svg.call(tool_tip)
@@ -115,7 +132,7 @@ function renderD3(){
         });
     }
   }
-  getMovies(page)
+  getMovies(page);
 }
 
-renderD3()
+renderD3();
