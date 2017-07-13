@@ -150,7 +150,7 @@ function renderD3(){
         return {
           backdropImg: bgImg + movieStuff.backdrop_path,
           budget: movieStuff.budget,
-          genres: movieStuff.genres,
+          runtime: movieStuff.runtime,
           homepage: movieStuff.homepage,
           title: movieStuff.title,
           popularity: movieStuff.popularity,
@@ -161,9 +161,19 @@ function renderD3(){
       })
       .catch(err => console.log(err));
 
-    Promise.all([movie])
+    const trailer = fetch(`https://api.themoviedb.org/3/movie/${d.id}/videos?api_key=${key}&language=en-US`)
+      .then(res => res.json())
+      .then(trailer => {
+        return {
+          trailer: `https://www.youtube.com/embed/${trailer.results[0].key}`,
+        }
+      });
+
+    Promise.all([movie, trailer])
       .then(res => {
         const movieRes = res[0];
+        const trailerRes = res[1]
+        console.log(trailerRes);
         const movieHTML = `
           <div class="close-btn">X CLOSE</div>
           <section>
@@ -176,6 +186,14 @@ function renderD3(){
               <article>
                 <p>${movieRes.overview}</p>
               </article>
+              <div class="movie-facts">
+                <p><b>Budget:</b> ${movieRes.budget}</p>
+                <p><b>Revenue:</b> ${movieRes.revenue}</p>
+                <p><b>Duration:</b> ${movieRes.runtime} mins</p>
+              </div>
+              <div class="movie-trailer">
+                <iframe src="${trailerRes.trailer}" frameborder="0" allowfullscreen></iframe>
+              </div>
             </div>
           </section>
 
