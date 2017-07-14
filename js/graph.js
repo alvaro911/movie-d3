@@ -189,7 +189,7 @@ function renderD3(){
               <div class="movie-facts">
                 <p><b>Rating:</b> ${movieRes.vote}/10</p>
                 <p><b>Duration:</b> ${movieRes.runtime} mins</p>
-                <p><b>Revenue:</b> ${movieRes.release_date}</p>
+                <p><b>Release date:</b> ${movieRes.release}</p>
               </div>
               <div class="movie-trailer">
                 <iframe src="${trailerRes.trailer}" frameborder="0" allowfullscreen></iframe>

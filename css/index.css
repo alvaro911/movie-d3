@@ -26,6 +26,14 @@ a{
   z-index: 0;
 }
 
+#scene .title{
+  position: absolute;
+  font-size: 35px;
+  top: 29%;
+  left: 31%;
+  color: #D3A126;
+}
+
 .bg{
   position: absolute;
   top: 0;
