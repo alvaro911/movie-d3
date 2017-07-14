@@ -153,9 +153,9 @@ function renderD3(){
           runtime: movieStuff.runtime,
           homepage: movieStuff.homepage,
           title: movieStuff.title,
-          popularity: movieStuff.popularity,
+          vote: movieStuff.vote_average,
           poster: smallPoster + movieStuff.poster_path,
-          revenue: movieStuff.revenue,
+          release: movieStuff.release_date,
           overview: movieStuff.overview,
         };
       })
@@ -187,9 +187,9 @@ function renderD3(){
                 <p>${movieRes.overview}</p>
               </article>
               <div class="movie-facts">
-                <p><b>Budget:</b> ${movieRes.budget}</p>
-                <p><b>Revenue:</b> ${movieRes.revenue}</p>
+                <p><b>Rating:</b> ${movieRes.vote}/10</p>
                 <p><b>Duration:</b> ${movieRes.runtime} mins</p>
+                <p><b>Revenue:</b> ${movieRes.release_date}</p>
               </div>
               <div class="movie-trailer">
                 <iframe src="${trailerRes.trailer}" frameborder="0" allowfullscreen></iframe>

@@ -34,6 +34,15 @@ menu{
   margin: 0 16px;
   cursor: pointer;
   font-size: 14px;
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+.btns button:hover{
+  background-color: #bf2121;
 }
 
 .chart{
@@ -178,7 +187,7 @@ section{
 .movie-trailer{
   width: 100%;
   height: auto;
-  margin-top: 25px; 
+  margin-top: 25px;
 }
 
 .movie-trailer iframe{

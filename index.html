@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Movie graph</title>
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+  <body>
+    <div id="scene">
+      <div class="bg" data-depth="0.00"><img src="img/bg.png"></div>
+      <div class="back-layer" data-depth="0.10"><img src="img/popcorn-back-layer.png"></div>
+      <div class="container" data-depth="0.20"><img src="img/pop-corn-container.png"></div>
+      <div class="on-container" data-depth="0.50"><img src="img/pop-on-container.png"></div>
+      <div class="front-layer" data-depth="0.80"><img src="img/popcorn-front-layer.png"></div>
+    </div>
+    <main>
+      <h1>How it works</h1>
+      <hr>
+      <article>
+        <p>
+          We've all been there, it's the weekend and you don't know what to go see, watch on Netflix or rent (yeah some people still rent movies)... until now. <br><br>
+
+          <span>Movie graph</span> is the app you need to help you decide what to do, using <a href="https://www.themoviedb.org" target="_blank">MovieDB</a> and the power of <a href="https://www.d3js.org" target="_blank">D3 js</a> to visualize data, will display 20 popular movies and their popularity will be represented by circles, the bigger the circle the more popular. Hover on top of them to see their popularity score.<br><br>
+
+          None of the movies on the screen call your attention? hit next to get the next 20 popular movies.<br><br>
+
+          Isn't that enough? Then click on any of the bubbles to get more detailed information like its length, the rating from 1 to 10, and finally watch a trailer.<br><br>
+
+          Enough words, YOU want action! click on the <b>get me there</b> button to start using the application.<br><br><br>
+
+          <a href="graph.html" class="btn">Take me there</a>
+        </p>
+
+        <div class="pic-bubbles">
+          <img src="img/bubbles.png">
+          <img src="img/bubbles-picker.png">
+        </div>
+      </article>
+    </main>
+
+    <!-- <script src="js/parallax.js"></script> -->
+  </body>
+</html>
